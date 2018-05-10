@@ -1,11 +1,23 @@
 # exemples PHRASES DEVANT ETRE VALIDEES
 
-Q is bigger than Z.
-Q is smaller than Z.
-Q has increased since Z.
-Q has decreased since Z.
-Q is the biggest.
-Z is the smallest.
+The fish is bigger than The dog.
+The fish is smaller than The dog.
+The fish has increased since 2010.
+The fish has decreased since 1999.
+The fish is the biggest.
+the dog is the smallest.
+
+My house is larger than hers.
+This box is smaller than the one I lost.
+Your dog runs faster than Jim's dog.
+The rock flew higher than the roof.
+I like Jack better.
+
+My house is the largest one in our neighborhood.
+This is the smallest box I've ever seen.
+Your dog ran the fastest of any dog in the race.
+My rock flew the highest.
+The dolphin is more intelligent than the dog.
 
 # exemples PHRASES DEVANT ETRE inVALIDEES
 

@@ -13,8 +13,7 @@ import time
 from settings import PROJECT_ROOT
 from collections import defaultdict
 
-# import modules.others as others
-import modules.big_process as bp
+import modules.l1_big_process as bp
 
 # Lien vers les dossiers de la racine ############################################
 parentdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,19 +21,16 @@ os.sys.path.insert(0, parentdir)
 from settings import PROJECT_ROOT, CORPUS_PHRASES, TREETAGGER_ROOT
 ###################################################################################
 
-# dossier_base_projet = PROJECT_ROOT
-# dossier_corpus_litterature = CORPUS_LITTERATURE
-# dossier_corpus_professeur = CORPUS_PROFESSEUR
 
 def main():
     print("\nNote de version : ")
-    print("\t - v1.0 : pour l'instant, je ne peux faire que des analyses interactives et l'option 2.")
+    print("\t - v1.0 : pour l'instant, je ne peux traiter que les options 1 et 2.")
     
     while 1 :
         a = input("\nBonjour, et bienvenue." + \
             "\n Que voulez-vous faire :" +\
             "\n 1 : Une analyse interactive " + \
-            "\n 2 : Une analyse sur les phrases de corpus_phrases/phrases_test.txt " + \
+            "\n 2 : Une analyse sur les phrases de corpus_phrases/ " + \
             "\n 3 : Une analyse sur corpus " + \
             "\n (enter) - Exit" + \
 
@@ -73,8 +69,17 @@ def main():
         #==================================
         elif a.strip() == '2' :
             print("\n-----------------------------------")
+            print("Choix 2 : analyse sur les phrases de corpus_phrases/.")
+            # print("-----------------------------------\n")
+            
+            print("Analyse en cours.")
+            
             bp.traitement_phrases_dans_texte(CORPUS_PHRASES)
 
+            # print("\n-----------------------------------")
+            print("\nJ'ai terminé. Veuillez vous rendre dans le dossier corpus_phrases/results/")
+            print("-----------------------------------\n")
+            
             break
        
         #==================================
