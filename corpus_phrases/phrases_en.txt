@@ -1,0 +1,12 @@
+# exemples PHRASES DEVANT ETRE VALIDEES
+
+Q is bigger than Z.
+Q is smaller than Z.
+Q has increased since Z.
+Q has decreased since Z.
+Q is the biggest.
+Z is the smallest.
+
+# exemples PHRASES DEVANT ETRE inVALIDEES
+
+I am here.

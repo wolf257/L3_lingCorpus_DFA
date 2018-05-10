@@ -1,0 +1,44 @@
+# exemples PHRASES DEVANT ETRE VALIDEES
+
+Jean est le plus grand. 
+Jean est le plus grand des deux. 
+Jean est le plus grand du quartier. 
+Jean est plus grand que Marc. 
+
+Jean est le moins fort. 
+Jean est le moins fort des cinq. 
+Jean est moins fort que Marc. 
+
+Jean est aussi grand que Marc.
+
+
+Jean a diminué. 
+Jean a diminué depuis 2010. 
+
+Jean a augmenté. 
+Jean a augmenté depuis 2000.
+
+Jean est le plus rapide. 
+Jean est le moins lourd.
+
+C'est le quart du baril. 
+Jean vaut le quart de Marc. 
+C'est le double de Marc. 
+Jean a doublé. 
+Jean a triplé. 
+Jean a quadruplé. 
+
+Jean est le meilleur ouvrier.
+Jean est meilleur que Marc. 
+Jean est le meilleur. 
+Marc est le pire des deux.
+Jean est aussi grand que Marc.
+Jean est le plus grand de tous.
+
+# exemples PHRASES DEVANT ETRE inVALIDEES
+
+Jean va au marché.
+Jean aime Marc.
+Youpi !
+Au revoir
+Jean est gros.
