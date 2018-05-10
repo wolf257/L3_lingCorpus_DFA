@@ -11,7 +11,6 @@ Jean est moins fort que Marc.
 
 Jean est aussi grand que Marc.
 
-
 Jean a diminué. 
 Jean a diminué depuis 2010. 
 
@@ -34,6 +33,33 @@ Jean est le meilleur.
 Marc est le pire des deux.
 Jean est aussi grand que Marc.
 Jean est le plus grand de tous.
+
+Pierre court moins vite que Paul. 
+Pierre chante aussi bien que Paul .
+Paul court plus vite que Pierre. 
+
+Pierre est moins grand que Paul. 
+Pierre est aussi gentil que Paul. 
+Paul est plus grand que Pierre. 
+Pierre travaille moins que Paul. 
+Pierre travaille autant que Paul. 
+Paul travaille plus que Pierre. 
+Ton dessert est meilleur que le mien.
+Ta dictée est plus mauvaise que la précédente.
+Ma situation financière est pire que je ne le pensais.
+Notre appartement est plus petit que le vôtre.
+Ce film a eu un succès moindre que prévu.
+
+Le guépard est plus rapide que le zèbre. 
+Ton vélo est aussi perfectionné que le mien. 
+Sa place est meilleure que la tienne.
+Ma tarte est moins bonne que tes crêpes.
+C'est encore pire que ce que j'imaginais.
+Le lion est plus fort que la gazelle. 
+Mon blouson est moins chaud que ton manteau.
+La glace à la vanille est meilleure que celle au chocolat. 
+Cette leçon est aussi simple que la précédente.
+Cette journée est la pire que j'ai vécue. 
 
 # exemples PHRASES DEVANT ETRE inVALIDEES
 
