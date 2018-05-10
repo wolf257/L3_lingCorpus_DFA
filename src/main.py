@@ -62,7 +62,7 @@ def main():
             phrase_a_analyser = (input("\nVeuillez entrer votre phrase : ")).strip().lower()
             print('')
             
-            bp.traitement_phrase(phrase_a_analyser , langue_analyse)
+            bp.traitement_phrase_interactif(phrase_a_analyser , langue_analyse)
             
             break
 

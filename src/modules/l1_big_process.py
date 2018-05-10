@@ -10,8 +10,9 @@
 ########################################################
 # LIST FUNCTIONS IN MODULES
 #
-#     + generation_dico_corpus_pr_xml()
-#     + creer_et_remplir_fichier_synthese_xml()
+#     + traitement_phrase_interactif()
+#     + traitement_phrase()
+#     + traitement_phrases_dans_texte()
 #
 ########################################################
 
@@ -35,10 +36,36 @@ from settings import PROJECT_ROOT, CORPUS_PHRASES, TREETAGGER_ROOT
 ###################################################################################
 
 ##############################################################
-# Fonction : traitement_phrase_fr(phrase, langue)
+# Fonction : traitement_phrase_interactif(phrase, langue)
 # Input :
 ##############################################################
+def traitement_phrase_interactif(phrase , langue='fr'):
+    ''' Analyse et écrit le détails'''
+    
+    #VAR
+    phrase_a_analyser = phrase
+    langue_analyse = langue
+    dico_a_remplir = defaultdict(lambda: defaultdict(dict))
+    # TAGGING
+    dico_tags = tagging.tagger_phrase_return_dict(dico_a_remplir, phrase_a_analyser, langue_analyse)
 
+    print("\n\n======================================")
+
+    for key in dico_tags :
+        print("\nKey : {} +++ forme : {} +++ pos : {} +++ lemme : {}".format(key, 
+        dico_tags[key]["mot_forme"], dico_tags[key]["pos"], dico_tags[key]["lemme"]))
+    
+    # ANALYSE (phrase contenant la conclusion)
+    issue_analyse = transitions.analyse_phrase_from_dico(dico_tags, langue_analyse)
+
+    print("\n\n!!! {}".format(str(issue_analyse)))
+    
+    return issue_analyse
+
+##############################################################
+# Fonction : traitement_phrase(phrase , lien_f_analyse_detaillee, num_phrase, langue='fr)
+# Input :
+##############################################################
 def traitement_phrase(phrase , lien_f_analyse_detaillee, num_phrase, langue='fr'):
     ''' Analyse et écrit le détails'''
     
@@ -53,7 +80,7 @@ def traitement_phrase(phrase , lien_f_analyse_detaillee, num_phrase, langue='fr'
     with codecs.open(f_a_detaillee, mode='a', encoding='utf8') as file_details :
         file_details.write("\n\n======================================")
         file_details.write("======================================")
-        file_details.write("\n\tPhrase numéro {} : \n".format(num_phrase))
+        file_details.write("\n\tPhrase numéro {} : {} \n".format(num_phrase, phrase_a_analyser))
 
         for key in dico_tags :
             file_details.write("\nKey : {} +++ forme : {} +++ pos : {} +++ lemme : {}".format(key, 
@@ -63,7 +90,7 @@ def traitement_phrase(phrase , lien_f_analyse_detaillee, num_phrase, langue='fr'
     issue_analyse = transitions.analyse_phrase_from_dico(dico_tags, langue_analyse, f_a_detaillee)
 
     with codecs.open(f_a_detaillee, mode='a', encoding='utf8') as file_details :
-        file_details.write("\n\n!!! CONCLUSION : {}".format(str(issue_analyse)))
+        file_details.write("\n\n !!! {}".format(str(issue_analyse)))
     
     return issue_analyse
 
@@ -71,7 +98,6 @@ def traitement_phrase(phrase , lien_f_analyse_detaillee, num_phrase, langue='fr'
 # Fonction : traitement_phrases_dans_texte(lien_dossier)
 # Input :
 ##############################################################
-
 def traitement_phrases_dans_texte(lien_dossier):
     
     fichiers_phrases = ["phrases_fr" , "phrases_en"]

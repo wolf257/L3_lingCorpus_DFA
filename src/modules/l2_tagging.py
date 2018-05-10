@@ -3,7 +3,7 @@
 ########################################################
 # LIST FUNCTIONS IN MODULES
 #
-#	+ 
+#	+ tagger_phrase_return_dict()
 #
 ########################################################
 
@@ -29,7 +29,7 @@ tagger_fr = treetaggerwrapper.TreeTagger(TAGLANG='fr', TAGINENC='utf-8' , TAGOUT
 tagger_en = treetaggerwrapper.TreeTagger(TAGLANG='en', TAGINENC='utf-8' , TAGOUTENC='utf-8' , TAGDIR=folder_treetagger)
 
 ##############################################################
-# Fonction : tagger_phrase_show_dict()
+# Fonction : tagger_phrase_return_dict()
 ##############################################################
 def tagger_phrase_return_dict(dico_a_remplir, phrase_a_analyser, langue_analyse='fr') :
 
