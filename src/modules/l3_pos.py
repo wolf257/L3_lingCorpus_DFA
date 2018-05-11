@@ -100,8 +100,8 @@ def POS_finder_en(pos_from_treetagger, lemme):
         if pos_from_treetagger == "RBS" :
             pos = 'adverbe_superlatif'
             
-
-        if pos_from_treetagger == 'DT' :
+        # DETERMINANT
+        if (pos_from_treetagger == 'DT') or (pos_from_treetagger == 'WDT') or (pos_from_treetagger == 'PDT') :
             pos = 'determinant'
     
         if pos_from_treetagger.startswith("PP") :
@@ -113,7 +113,7 @@ def POS_finder_en(pos_from_treetagger, lemme):
         if  pos_from_treetagger == 'CD' :
             pos = 'nombre'
 
-        if pos_from_treetagger == 'IN' :
+        if pos_from_treetagger.startswith('IN') :
             pos = 'preposition'
         
         if pos_from_treetagger == "PUN" :

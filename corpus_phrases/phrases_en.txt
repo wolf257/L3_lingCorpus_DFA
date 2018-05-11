@@ -19,6 +19,73 @@ Your dog ran the fastest of any dog in the race.
 My rock flew the highest.
 The dolphin is more intelligent than the dog.
 
+
+This computer is better than that one.
+She's stronger at chess than I am.
+It's much colder today than it was yesterday.
+Our car is bigger than your car.
+This grammar topic is easier than most others.
+I find science more difficult than mathematics.
+Today's ESL lesson was more interesting than usual.
+
+
+My sister is much taller than me.
+It's colder today than it was yesterday.
+
+
+The shops are always more crowded just before Christmas.
+My sister is more careful with her writing than I am with mine.
+
+
+Russian grammar is more difficult than English grammar.
+My sister is much more intelligent than me.†
+I find maths lessons more enjoyable than science lessons.
+
+
+Some people think that Russian is the most difficult language.
+Albert Einstein was the most intelligent person in history.
+My most enjoyable class is English.
+You are the most irritating person I have ever met!
+
+
+She's twice as old as her sister.
+He's not as stupid as he looks!
+I'm almost as good in maths as in science.
+This book is not as exciting as the last one.
+The cafeteria is not as crowded as usual.
+Russian is not quite as difficult as Chinese.
+
+She drives worse than her sister. 
+I work harder than him
+She do it better than me
+This shirt is more expensive than the other one
+Alice teaches worse than my mother.
+He's more polite than my own son.
+My dog grows faster than yours
+You were longer than me.
+My necklace is fancier!
+She's smarter than him.	
+I'm good at tennis.	
+
 # exemples PHRASES DEVANT ETRE inVALIDEES
 
 I am here.
+It's time to stop underrating the Celtics.
+##Lewis Hamilton says he has ‘zero comfortability’ despite F1 lead.
+Magnus Carlsen and Fabiano Caruana in the hunt for more prizes.
+US issues apology after Canadian minister told to take off turban at airport.
+Boxing rips dignity away like a stolen heart – David Haye is a spent force.
+White House aide dismissed McCain's views because 'he's dying anyway' – report.
+
+Non-smoking.	
+No matter how hard I try, I can't do it any better than she can.	
+He came back soon.	
+My teacher told me that I should have spent more time preparing my speech.	
+It is a nice view from here.	
+We have lost sight of him.	
+Brian went to school with Kate.	
+How's your cold?	
+She went to see him the other day.	
+All the passengers were saved from drowning.	
+The meeting was closed.	
+That's his house.

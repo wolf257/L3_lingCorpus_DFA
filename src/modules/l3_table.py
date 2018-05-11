@@ -64,12 +64,13 @@ table_de_transition = {
 
     ############################
     # INIT
-    ('r_init', 'le+') : ('r_init' , write_sujet_logique, tell_sujet_logique), 
-
+    ('r_init', 'le+') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), 
     ('r_init', 'pronom') : ('sujet_logique', write_sujet_logique, tell_sujet_logique), 
     ('r_init', 'nom') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), 
     ('r_init', 'determinant') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), 
-
+    ('r_init', 'adjectif') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), 
+    ('r_init', 'verbe') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), 
+    
     ############################
     # sujet_logique
     ('sujet_logique', 'pronom') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), 
@@ -78,6 +79,10 @@ table_de_transition = {
     ('sujet_logique', 'adjectif') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), 
     ('sujet_logique', 'le+') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), 
     ('sujet_logique', 'preposition') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique), # Le vélo à Paul
+    ('sujet_logique', 'possessive_ending') : ('sujet_logique' , write_sujet_logique, tell_sujet_logique),
+    
+    ('sujet_logique', 'adjectif_comparatif') : ('structure_comparative' , write_sc, tell_sc),
+    ('sujet_logique', 'adverbe_superlatif') : ('structure_superlative' , write_ss, tell_ss),
     
     ('sujet_logique', 'verbe') : ('structure_avec_verbe' , write_sv, tell_sv),
     ('sujet_logique', 'verbe_etre') : ('structure_avec_etre' , write_se, tell_se),
@@ -86,24 +91,32 @@ table_de_transition = {
     ############################
     # STRUCTURE avec VERBE
     
-    ('structure_avec_verbe' , 'adverbe_comparatif') : ('structure_comparative' , write_sc, tell_sc),
-    ('structure_avec_verbe' , 'verbe') : ('structure_comparative' , write_sc, tell_sc),
-    ('structure_avec_verbe' , 'nom') : ('structure_comparative' , write_sc, tell_sc),
+    ('structure_avec_verbe' , 'verbe') : ('structure_avec_verbe' , write_sv, tell_sv),
+    ('structure_avec_verbe', 'verbe_etre') : ('structure_avec_etre' , write_se, tell_se),
+    # ('structure_avec_verbe' , 'nom') : ('structure_comparative' , write_sc, tell_sc),
+    ('structure_avec_verbe' , 'nom') : ('structure_avec_verbe' , write_sv, tell_sv),
+    ('structure_avec_verbe', 'adjectif') : ('structure_comparative' , write_sc, tell_sc),
+    
+    ('structure_avec_verbe', 'determinant') : ('structure_avec_verbe' , write_sv, tell_sv),
+    ('structure_avec_verbe', 'pronom') : ('structure_avec_verbe' , write_sv, tell_sv),    
+    ('structure_avec_verbe', 'preposition') : ('structure_avec_verbe' , write_sv, tell_sv),
     
     ('structure_avec_verbe', 'verbe_comparatif') : ('structure_comparative_valide' , write_scv, tell_scv),
     ('structure_avec_verbe', 'adjectif_comparatif') : ('structure_comparative_valide' , write_scv, tell_scv),
+    ('structure_avec_verbe' , 'adverbe_comparatif') : ('structure_comparative_valide' , write_scv, tell_scv),
     
     ('structure_avec_verbe', 'le+') : ('structure_superlative' , write_ss, tell_ss),
     
     ############################
     # STRUCTURE avec ETRE
+    ('structure_avec_etre' , 'nom') : ('structure_comparative' , write_sc, tell_sc),
     
     ('structure_avec_etre' , 'adverbe_comparatif') : ('structure_comparative' , write_sc, tell_sc), 
         # CAUTION
     ('structure_avec_etre' , 'adverbe') : ('structure_comparative' , write_sc, tell_sc), 
     
     ('structure_avec_etre' , 'adjectif') : ('structure_comparative' , write_sc, tell_sc), 
-    ('structure_avec_etre' , 'adjectif_comparatif') : ('structure_comparative' , write_sc, tell_sc), 
+    ('structure_avec_etre' , 'adjectif_comparatif') : ('structure_comparative_valide' , write_scv, tell_scv),
 
     ('structure_avec_etre' , 'adjectif_superlatif') : ('structure_superlative' , write_ss, tell_ss), 
     ('structure_avec_etre' , 'le+') : ('structure_superlative' , write_ss, tell_ss),
@@ -113,9 +126,11 @@ table_de_transition = {
 
     ('structure_comparative', 'adverbe') : ('structure_comparative_valide' , write_scv, tell_scv),
     ('structure_comparative', 'adverbe_comparatif') : ('structure_comparative_valide' , write_scv, tell_scv),
+    ('structure_comparative', 'adverbe_superlatif') : ('structure_comparative_valide' , write_scv, tell_scv),
 
     ('structure_comparative', 'adjectif') : ('structure_comparative_valide' , write_scv, tell_scv),
     ('structure_comparative', 'adjectif_comparatif') : ('structure_comparative_valide' , write_scv, tell_scv),
+    ('structure_comparative', 'adjectif_superlatif') : ('structure_comparative_valide' , write_scv, tell_scv),
     
     ('structure_comparative', 'pronom') : ('structure_comparative_valide' , write_scv, tell_scv),
     ('structure_comparative', 'nom') : ('structure_comparative_valide' , write_scv, tell_scv),
@@ -123,16 +138,24 @@ table_de_transition = {
     ('structure_comparative', 'verbe') : ('structure_comparative_valide' , write_scv, tell_scv),
     ('structure_comparative', 'le+') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative', 'determinant') : ('structure_comparative' , write_sc, tell_sc),
-
+    ('structure_comparative', 'preposition') : ('structure_comparative' , write_sc, tell_sc),
+    
+    ('structure_comparative', 'verbe_etre') : ('structure_comparative' , write_sc, tell_sc),
+    
     ('structure_comparative_valide', 'verbe') : ('structure_comparative_valide' , write_scv, tell_scv),
+    ('structure_comparative_valide', 'verbe_etre') : ('structure_comparative_valide' , write_scv, tell_scv),
     ('structure_comparative_valide', 'conjonction') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative_valide', 'adverbe') : ('structure_comparative' , write_sc, tell_sc),
+    ('structure_comparative_valide', 'adverbe_comparatif') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative_valide', 'adjectif') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative_valide', 'que+') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative_valide', 'preposition') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative_valide', 'le+') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative_valide', 'de+') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative_valide', 'pronom') : ('structure_comparative' , write_sc, tell_sc),
+    ('structure_comparative_valide', 'nom') : ('structure_comparative_valide' , write_scv, tell_scv),
+    ('structure_comparative_valide', 'nombre') : ('structure_comparative_valide' , write_scv, tell_scv),
+    
     ('structure_comparative', 'que+') : ('structure_comparative' , write_sc, tell_sc),
     ('structure_comparative_valide', 'possessive_ending') : ('structure_comparative' , write_sc, tell_sc),
 
@@ -144,9 +167,16 @@ table_de_transition = {
     ('structure_superlative' , 'adverbe_comparatif') : ('structure_superlative' , write_ss, tell_ss),
     ('structure_superlative_valide', 'preposition') : ('structure_superlative' , write_ss, tell_ss),
     ('structure_superlative', 'le+') : ('structure_superlative' , write_ss, tell_ss),
+    ('structure_superlative_valide', 'verbe_etre') : ('structure_superlative' , write_ss, tell_ss),
     
-    ('structure_superlative' , 'adjectif') : ('structure_superlative_valide' , write_ssv, tell_ssv),
     ('structure_superlative' , 'adverbe') : ('structure_superlative_valide' , write_ssv, tell_ssv),
+    ('structure_superlative', 'adverbe_comparatif') : ('structure_superlative_valide' , write_ssv, tell_ssv),
+    ('structure_superlative', 'adverbe_superlatif') : ('structure_superlative_valide' , write_ssv, tell_ssv),
+
+    ('structure_superlative' , 'adjectif') : ('structure_superlative_valide' , write_ssv, tell_ssv),
+    ('structure_superlative', 'adjectif_comparatif') : ('structure_superlative_valide' , write_ssv, tell_ssv),
+    ('structure_superlative', 'adjectif_superlatif') : ('structure_superlative_valide' , write_ssv, tell_ssv),
+    
     ('structure_superlative' , 'nombre') : ('structure_superlative_valide' , write_ssv, tell_ssv),
     ('structure_superlative' , 'nom') : ('structure_superlative_valide' , write_ssv, tell_ssv),
     ('structure_superlative' , 'pronom') : ('structure_superlative_valide' , write_ssv, tell_ssv),
@@ -159,6 +189,7 @@ table_de_transition = {
     ('structure_superlative_valide' , 'nombre') : ('structure_superlative_valide' , write_ssv, tell_ssv),
 
     ('structure_superlative_valide' , 'adverbe') : ('structure_superlative_valide' , write_ssv, tell_ssv),
+    ('structure_superlative_valide', 'adjectif') : ('structure_superlative_valide' , write_ssv, tell_ssv),
     
     ('structure_superlative_valide' , 'verbe') : ('structure_superlative_valide' , write_ssv, tell_ssv),
     
