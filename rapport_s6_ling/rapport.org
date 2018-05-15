@@ -1,0 +1,68 @@
+* ++ options ++                                                                 :prelim:
+** Infos
+#+AUTHOR: Ousseynou GUEYE
+#+EMAIL: <myname>@...com
+#+TITLE: *Rapport de projet L3s6 : \\ TNM3A03A : Linguistique de Corpus*
+
+#+OPTIONS:   author:t timestamp:t email:nil
+#+LANGUAGE: en
+
+** Tags
+#+TAGS:  prelim(p) noexport(n)
+#+EXCLUDE_TAGS: noexport prelim
+
+** Latex
+*** compiler
+#+latex_compiler: lualatex
+*** class
+#+LATEX_CLASS: myreport
+#+LATEX_CLASS_OPTIONS: [a4paper,11pt]
+*** margins
+#+LATEX_HEADER: \usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+*** others
+#+OPTIONS: tex:t          Do the right thing automatically (MathJax)
+#+OPTIONS: LaTeX:nil
+
+** Meta-info
+#+DESCRIPTION: A description of how I currently use org-mode
+#+CREATOR: HK
+
+** Others
+#+OPTIONS:   H:3 num:t toc:3
+#+OPTIONS: skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+OPTIONS: \n:t ^:nil # to export underscore as underscore
+
+
+* Définition des objectifs
+
+#+LATEX: \input{chap/objectifs}
+
+* Choix des outils
+
+unitex vs python
+
+* Organisation des dossiers et du code
+
+#+LATEX: \input{chap/organisation}
+
+* Démarches
+
+[[./img/dfa_graph.png]]
+
+* Difficultés rencontrées
+
+#+LATEX: \input{chap/difficultes}
+
+* Résultats
+
+#+LATEX: \input{chap/resultats}
+
+* Limites et ouvertures
+
+Analyse à deux membres maximums
+
+NO :
+question :
+The older you get, the more irritating you become.
+
+#+LATEX: \input{chap/lim_ouv}

@@ -1,0 +1,90 @@
+% Created 2018-05-15 Tue 09:56
+\documentclass[a4paper,11pt]{report}
+                % input
+                \usepackage[utf8]{luainputenc}
+                \usepackage{fontspec}
+                \usepackage{unicode-math}
+                \usepackage[novoc]{arabluatex}
+                \newfontfamily\arabicfont[Script=Arabic]{Scheherazade}
+                \newcommand{\arbt}[1]{{\Large{\arb{#1}}}} %{\arbt{...}}
+                \newcommand{\arbT}[1]{{\LARGE\arb{#1}}} %\arbT{...}
+                % layout
+                \usepackage{layout}
+                \usepackage{setspace} %package pour les interlignes
+                \usepackage{multicol}
+                \setlength{\columnsep}{40pt}
+                \usepackage{xcolor} % package pour les couleurs
+                % headers ...
+                \usepackage{fancyhdr} % header etc
+                \usepackage{fancybox} %package pour les encadrements supp
+                \pagestyle{fancy} % Use en-tetes et des pieds de page personnaliser grâce fancyhdr
+                \usepackage[Glenn]{fncychap}
+                \fancyhead[L, R, C]{} % définition en-tête
+                \fancyfoot[L, R]{} % définition pied de page
+                \fancyfoot[C]{\thepage}
+           		\renewcommand{\headrulewidth}{0pt} % ligne haut out
+	        	\renewcommand{\footrulewidth}{0pt} % ligne bas out
+                % others
+                \usepackage{float}
+                \usepackage{array, makecell} %pour les tableaux et makecell pour les cellules
+                \usepackage{multirow} %pr tableau
+                \newcolumntype{P}[1]{>{\centering\arraybackslash}m{#1}} %P{taille}
+                % maths
+                \usepackage{amsmath, amsthm} %package pour les maths
+                \usepackage{lettrine}
+                \usepackage{marvosym} %package de symbole
+                % others
+                \usepackage{wrapfig} % pour les capsules in text
+                %defaut emacs packages
+                \usepackage{fixltx2e}
+                \usepackage{graphicx}
+                \usepackage{longtable}
+                \usepackage{float}
+                \usepackage{wrapfig}
+                \usepackage{rotating}
+                \usepackage[normalem]{ulem}
+                \usepackage{textcomp}
+                \usepackage{wasysym}
+                \usepackage{hyperref}
+\usepackage[top=2cm, bottom=2cm, left=2cm, right=2cm]{geometry}
+\author{Ousseynou GUEYE}
+\date{\today}
+
+\title{\textbf{Rapport de projet L3s6 : \\ TNM3A03A : Linguistique de Corpus}}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={A description of how I currently use org-mode},
+  pdfcreator={HK}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{3}
+\tableofcontents
+
+\chapter{Définition des objectifs et choix des outils}
+\label{sec-1}
+
+\input{chap/objectifs}
+
+\chapter{Organisation des dossiers et du code}
+\label{sec-3}
+
+\input{chap/organisation}
+
+\chapter{Démarches et difficulté}
+\label{sec-4}
+
+\input{chap/difficultes}
+
+\chapter{Résultats}
+\label{sec-6}
+
+\input{chap/resultats}
+
+\chapter{Limites et ouvertures}
+\label{sec-7}
+
+
+\input{chap/lim_ouv}
+% HK
+\end{document}

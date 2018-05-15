@@ -28,4 +28,4 @@ def creation_folder(path_to_parent, name_folder):
         print('\tCréation du dossier réussi.')
 
 if __name__ == '__main__':
-    pass
+    print("Je ne peux fonctionner seul.")

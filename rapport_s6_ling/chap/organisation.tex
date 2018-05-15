@@ -1,0 +1,159 @@
+
+\section{Organisation des dossiers}
+
+\fbox{
+\begin{minipage}[t]{.4\textwidth}
+\footnotesize{
+\begin{center}
+AVANT EXÉCUTION DU PROGRAMME
+\end{center}
+
+\begin{itemize}
+\item \textbf{PROJECT\_ROOT/}
+	\begin{itemize}
+	\item {src/}
+		\begin{itemize}
+		\item {modules/}
+		\end{itemize}
+	\item {corpus\_phrases/}
+	\item {from\_outside\_treetagger/}
+	\item {rapport/}
+	\end{itemize}
+\end{itemize}
+}
+\end{minipage} 
+} \fbox{
+\begin{minipage}[t]{.4\textwidth}
+\footnotesize{ 
+\begin{center}
+APRÈS EXÉCUTION DU PROGRAMME
+\end{center}
+
+\begin{itemize}
+\item \textbf{PROJECT\_ROOT/}
+	\begin{itemize}
+	\item {src/}
+		\begin{itemize}
+			\item {modules/}
+		\end{itemize}
+	\item {corpus\_phrases/}
+		\begin{itemize}
+		\item \textbf{resultats/}
+		\end{itemize}
+	\item {from\_outside\_treetagger/}
+	\item {rapport/}
+	\end{itemize}
+\end{itemize}
+}
+\end{minipage}
+} 
+
+~\\
+
+
+%------------------------------------------------------------
+%\newpage
+\section{Les modules}
+
+La partie programmée est regroupée dans le dossier \emph{src}. \\
+
+
+ \begin{wrapfigure}{l}{.45\textwidth} % { r, l, i } pour la position,
+\fbox{
+\begin{minipage}{.40\textwidth}
+\footnotesize{
+\textbf{code\_source/}
+	\begin{itemize}
+	\item {main.py}
+	\item {settings.py}
+	\item {modules/}
+		\begin{itemize}
+		\item {l1\_big\_process.py} \\
+
+		\item {l2\_tagging.py}
+		\item {l2\_transitions.py}
+		\item {l2\_others.py} \\
+
+		\item {l3\_pos.py}
+		\item {l3\_table.py}
+		\end{itemize}
+	\end{itemize}
+}
+\end{minipage}
+} 
+\end{wrapfigure}
+
+~\\ 
+
+\subsubsection{Rappels}
+
+De même, nous aimerions préciser la logique de notre mouvement (flow). C'est en la suivant que j'ai pu, de manière systématique naviguer à travers le code. \\
+
+En plus des messages souvent clairs de l'interprète de commande, je pars toujours du niveau 0 vers le niveau 2. \\  
+
+Au début de chaque fichier.py du module se trouve la \textbf{liste des fonctions} qu'il contient. \\ \\
+
+\subsubsection{Description des modules} 
+
+\underline{Niveau 0} : Si ce n'est pour contrôler la présentation, le niveau zéro fut très peu sollicité en cas de bug. 
+ 
+	\begin{itemize}
+	\item \textbf{main.py} : Contient l'interface. C'est le fichier qui englobe le tout.
+	\item \textbf{settings.py} : Pour faciliter la \emph{gestion des liens}, nous avons regroupé les liens vers nos dossiers dans ce fichier. Il ne contient aucune fonction, mais juste des variables. \\
+	\end{itemize}
+
+\underline{Niveau 1} : Ce niveau est toujours sollicité, car c'est lui qui coordonne le programme, mais aussi donne les paramètres aux différentes fonctions du niveau 2. C'est le niveau le plus délicat à manipuler.
+
+	\begin{itemize}
+	\item \textbf{modules/l1\_big\_process.py} : Ne contient que des \emph{fonctions composées d'autres fonctions} des sous-modules. C'est le seul fichier du dossier modules/ qu'appelle le main. Il sert d'interface entre le main.py et les autres modules. \\
+	\end{itemize}
+
+\underline{Niveau 2} : contient toutes les fonctions élémentaires. Quand un problème apparait, il y a de fortes chances qu'un des fichiers de ce niveau doive être vérifié après le niveau 1.
+
+	\begin{itemize}
+	\item \textbf{modules/l2\_tagging.py} : contient toutes les fonctions aidant à \emph{l'étiquettage morphosyntaxique} des mots.
+	
+	\item \textbf{modules/l2\_transitions.py} : contient l'automate à proprement parler.
+
+	\item \textbf{modules/l2\_others.py} : contient diverses fonctions comme celle permettant la creation des dossiers.
+			
+    \end{itemize}
+
+\underline{Niveau 3} : Ce niveau, le plus bas, est composé de deux fichiers :
+
+	\begin{itemize}
+	\item \textbf{modules/l3\_pos.py} : s'occupe de prendre les réponses de treetagger et de nous rendre une catégorie syntaxique selon des règles que nous avons précisées. \\
+	\item \textbf{modules/l3\_table.py} : contient les transitions qui sont utilisées par l'automate. \\
+	\end{itemize}
+
+
+%-------------------------------------------------------------
+%\newpage
+\section{Processus}
+
+\emph{Ce que nous dirons pour un élément (phrases, ... , mot) est valable pour tous ses éléments-frères.} 
+
+\begin{itemize}
+%================================================
+\item \textbf{- [x] } : NIVEAU GLOBAL
+\begin{enumerate}
+\item \textbf{[x]} : Création dossier \emph{resultats}.
+\item \textbf{[x]} : Récupération liste des phrases des fichiers \emph{phrases\_*} où \{*\} est la langue (en pour english et fr pour français).
+\item \textbf{[x]} : Envoi des données et des paramétres.
+\end{enumerate}
+%================================================
+\item \textbf{- [x] } : NIVEAU PHRASES et MOTS
+\begin{enumerate}
+\item \textbf{[x]} : Découpage de la phrase et récupération des mots sous formes de dictionnaire.
+\item \textbf{[x]} : Étiquettage des mots et remplissage du dictionnaire (numéro, pos, lemme).
+\item \textbf{[x]} : Utilisation de l'automate pour déterminer si la phrase passe le test ou non.
+\item \textbf{[x]} : Écriture des résultats.
+\end{enumerate}
+
+\end{itemize}
+
+
+
+
+
+  

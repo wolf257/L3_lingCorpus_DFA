@@ -1,0 +1,90 @@
+\section{Fichiers finaux}
+
+Les résultats du programme sont inscrits dans deux fichiers par langue : 
+\begin{itemize}
+    \item phrases\_*\_results.txt,
+    \item phrases\_*\_analyse\_detaillee.txt\footnote{* : en ou fr}.
+\end{itemize}
+
+~\\ Le premier se présente ainsi : \\ 
+
+
+\fbox{
+\begin{minipage}{.85\textwidth}
+\footnotesize{
+
+\texttt{5 : Jean est le moins fort.}
+ 
+\texttt{\hspace{.5cm} ----> OUI : Reconnaissance réussie.} 
+
+\texttt{\hspace{1cm} Je pense que c'est une structure de comparaison. } 
+
+%----------------------------------------------------------------------------
+} 
+\end{minipage} 
+}
+
+~~\\
+
+Le seconde nous donne une analyse détaillée et se présente ainsi : \\ 
+
+{ \Huge{PAGE SUIVANTE ---> } }
+
+\newpage
+\fbox{
+\begin{minipage}{.85\textwidth}
+\footnotesize{
+\texttt{\hspace{.5cm} Phrase numéro 2 : The fish is smaller than The dog.} \\
+  \\
+\texttt{Key : 0 +++ forme : The +++ pos : DT +++ lemme : the}  \\
+\texttt{Key : 1 +++ forme : fish +++ pos : NN +++ lemme : fish}  \\
+\texttt{Key : 2 +++ forme : is +++ pos : VBZ +++ lemme : be}  \\
+\texttt{Key : 3 +++ forme : smaller +++ pos : JJR +++ lemme : small}  \\
+\texttt{Key : 4 +++ forme : than +++ pos : IN +++ lemme : than}  \\
+\texttt{Key : 5 +++ forme : The +++ pos : DT +++ lemme : the}  \\
+\texttt{Key : 6 +++ forme : dog +++ pos : NN +++ lemme : dog}  \\
+\texttt{Key : 7 +++ forme : . +++ pos : SENT +++ lemme : .}  \\
+ \\
+\texttt{On est au mot 'The' de pos 'le+' } \\
+\texttt{\hspace{1cm} 	Le couple a chercher est : ('r\_init', 'le+')} \\
+\texttt{\hspace{1cm} 	== Nous sommes dans 'sujet\_logique' ==} \\
+ \\
+\texttt{On est au mot 'fish' de pos 'nom' } \\
+\texttt{\hspace{1cm} 	Le couple a chercher est : ('sujet\_logique', 'nom')} \\
+\texttt{\hspace{1cm} 	== Nous sommes dans 'sujet\_logique' ==} \\
+ \\
+\texttt{On est au mot 'is' de pos 'verbe\_etre' } \\
+\texttt{\hspace{1cm} 	Le couple a chercher est : ('sujet\_logique', 'verbe\_etre')} \\
+\texttt{\hspace{1cm} 	== Nous sommes au coeur d'une structure avec être.} \\
+\texttt{\hspace{1cm} 	Il me faut avancer pour plus de détails. ==} \\
+ \\
+\texttt{On est au mot 'smaller' de pos 'adjectif\_comparatif' } \\
+\texttt{\hspace{1cm} 	Le couple a chercher est : ('structure\_avec\_etre', 'adjectif\_comparatif')} \\
+\texttt{\hspace{1cm} 	== On valide la 'structure\_comparative' ==} \\
+ \\
+\texttt{On est au mot 'than' de pos 'que+' } \\
+\texttt{\hspace{1cm} 	Le couple a chercher est : ('structure\_comparative\_valide', 'que+')} \\
+\texttt{\hspace{1cm} 	== Nous sommes au coeur de 'structure\_comparative' ==} \\
+ \\
+\texttt{On est au mot 'The' de pos 'le+' } \\
+\texttt{\hspace{1cm} 	Le couple a chercher est : ('structure\_comparative', 'le+')} \\
+\texttt{\hspace{1cm} 	== Nous sommes au coeur de 'structure\_comparative' ==} \\
+ \\
+\texttt{On est au mot 'dog' de pos 'nom' } \\
+\texttt{\hspace{1cm} 	Le couple a chercher est : ('structure\_comparative', 'nom')} \\
+\texttt{\hspace{1cm} 	== On valide la 'structure\_comparative' ==} \\
+ \\
+\texttt{On est au mot '.' de pos 'ponctuation' } \\
+\texttt{\hspace{1cm} 	Le couple a chercher est : ('structure\_comparative\_valide', 'ponctuation')} \\
+\texttt{\hspace{1cm} 	== Nous sommes à la fin de la phrase ==} \\
+ \\
+\texttt{ !!! OUI : Reconnaissance réussie.} \\
+\texttt{ Je pense que c'est une structure de comparaison.} \\
+%----------------------------------------------------------------------------
+
+}
+ \end{minipage}
+ }
+
+%~~\\
+
